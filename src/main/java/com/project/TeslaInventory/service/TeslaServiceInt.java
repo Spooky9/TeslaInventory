@@ -16,4 +16,6 @@ public interface TeslaServiceInt {
 	public List<Tesla> getTeslaByAutopilot(Boolean hasAutopilot);
 	public void saveTesla(Tesla tesla);
 	public void updateTesla(Long id, Tesla tesla);
+	public void deleteById(Long id);
+	public void deleteAll();
 }

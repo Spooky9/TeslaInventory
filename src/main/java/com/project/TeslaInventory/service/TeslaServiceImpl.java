@@ -78,4 +78,14 @@ public class TeslaServiceImpl implements TeslaServiceInt{
 		
 		repo.save(teslaToReplace);
 	}
+
+	@Override
+	public void deleteById(Long id) {
+		repo.deleteById(id);
+	}
+
+	@Override
+	public void deleteAll() {
+		repo.deleteAll();
+	}
 }

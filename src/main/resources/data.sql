@@ -1,1 +1,1 @@
-INSERT INTO tesla (id, model, battery, color, wheel_size, interior, autopilot) VALUES (1, '3', 'Long Range', 'Blue', 18, 'Black', false), (2, 'S', 'Standard Range', 'Silver', 20, 'White', true), (3, 'X', 'Performance', 'Red', 21, 'Cream', true);
+INSERT INTO tesla (id, model, battery, color, wheel_size, interior, autopilot) VALUES (1, '3', 'Long Range', 'Blue', 18, 'Black', false), (2, 'S', 'Standard Range', 'Silver', 20, 'White', true), (3, 'X', 'Performance', 'Red', 21, 'Cream', true), (4, '3', 'Long Range', 'Blue', 18, 'White', true);

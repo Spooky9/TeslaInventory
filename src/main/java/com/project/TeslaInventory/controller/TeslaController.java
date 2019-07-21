@@ -3,6 +3,7 @@ package com.project.TeslaInventory.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -77,5 +78,17 @@ public class TeslaController {
 	@GetMapping("/tesla/autopilot/{hasAutopilot}")
 	public List<Tesla> returnTeslaByAutopilot(@PathVariable boolean hasAutopilot){
 		return service.getTeslaByAutopilot(hasAutopilot);
+	}
+	
+	@DeleteMapping("/tesla/{id}")
+	public String deleteById(@PathVariable Long id) {
+		service.deleteById(id);
+		return "Tesla Deleted Successfully";
+	}
+	
+	@DeleteMapping("/teslas")
+	public String deleteAll() {
+		service.deleteAll();
+		return "All Teslas Deleted Successfully";
 	}
 }
