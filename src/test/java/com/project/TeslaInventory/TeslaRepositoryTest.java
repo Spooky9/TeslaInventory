@@ -34,9 +34,9 @@ public class TeslaRepositoryTest {
 	@Before
 	public void setUp() {
 		
-		carOne = new Tesla("S", "Long", "Red", 20, "White", true);
-		carTwo = new Tesla("3", "Standard", "Red", 19, "Black", false);
-		carThree = new Tesla("3", "Standard", "Black", 19, "Black", false);
+		carOne = new Tesla("Model S", "Long", "Red", 20, "White", true);
+		carTwo = new Tesla("Model 3", "Standard", "Red", 19, "Black", false);
+		carThree = new Tesla("Model 3", "Standard", "Black", 19, "Black", false);
 		entityManager.persistAndFlush(carOne);
 		entityManager.persistAndFlush(carTwo);
 		entityManager.persistAndFlush(carThree);
@@ -66,9 +66,9 @@ public class TeslaRepositoryTest {
 	}
 	
 	@Test
-	public void findAllByBattery_shouldReturnCorrectTeslaList() {
+	public void findAllByBatteryRange_shouldReturnCorrectTeslaList() {
 		List<Tesla> cars = Arrays.asList(carTwo, carThree);
-		List<Tesla> found = repo.findAllByBattery(carTwo.getBattery());
+		List<Tesla> found = repo.findAllByBatteryRange(carTwo.getBatteryRange());
 		
 		assertEquals(cars, found);
 	}
@@ -83,9 +83,9 @@ public class TeslaRepositoryTest {
 	}
 	
 	@Test
-	public void findAllByInterior_shouldReturnCorrectTeslaList() {
+	public void findAllByInteriorColor_shouldReturnCorrectTeslaList() {
 		List<Tesla> cars = Arrays.asList(carTwo, carThree);
-		List<Tesla> found = repo.findAllByInterior(carTwo.getInterior());
+		List<Tesla> found = repo.findAllByInteriorColor(carTwo.getInteriorColor());
 		
 		assertEquals(cars, found);
 	}

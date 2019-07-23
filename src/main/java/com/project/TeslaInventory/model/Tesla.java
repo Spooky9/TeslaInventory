@@ -5,29 +5,44 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="Tesla")
 public class Tesla {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotBlank(message="Model Required")
+	@Pattern(regexp="^(Model S|Model 3|Model X)")
 	private String model;
-	private String battery;
+	
+	@NotBlank(message="Battery Required")
+	@Pattern(regexp="^(Standard|Long|Performance)")
+	private String batteryRange;
+	
+	@NotBlank(message="Color Required")
+	@Pattern(regexp="^(White|Black|Silver|Blue|Red)")
 	private String color;
+	
 	private Integer wheelSize;
-	private String interior;
+	
+	@NotBlank(message="Interior Required")
+	@Pattern(regexp="^(White|Black|Cream)")
+	private String interiorColor;
 	private Boolean autopilot;
 	
 	public Tesla() {}
 	
-	public Tesla(String model, String battery, String color, Integer wheelSize, String interior, Boolean autopilot) {
+	public Tesla(String model, String batteryRange, String color, Integer wheelSize, String interiorColor, Boolean autopilot) {
 		this.model = model;
-		this.battery = battery;
+		this.batteryRange = batteryRange;
 		this.color = color;
 		this.wheelSize = wheelSize;
-		this.interior = interior;
+		this.interiorColor = interiorColor;
 		this.autopilot = autopilot;
 	}
 
@@ -39,12 +54,12 @@ public class Tesla {
 		this.model = model;
 	}
 
-	public String getBattery() {
-		return battery;
+	public String getBatteryRange() {
+		return batteryRange;
 	}
 
-	public void setBattery(String battery) {
-		this.battery = battery;
+	public void setBatteryRange(String batteryRange) {
+		this.batteryRange = batteryRange;
 	}
 
 	public String getColor() {
@@ -63,12 +78,12 @@ public class Tesla {
 		this.wheelSize = wheelSize;
 	}
 
-	public String getInterior() {
-		return interior;
+	public String getInteriorColor() {
+		return interiorColor;
 	}
 
-	public void setInterior(String interior) {
-		this.interior = interior;
+	public void setInteriorColor(String interiorColor) {
+		this.interiorColor = interiorColor;
 	}
 
 	public Boolean getAutopilot() {

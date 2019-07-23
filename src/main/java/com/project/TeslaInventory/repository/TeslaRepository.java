@@ -13,8 +13,8 @@ public interface TeslaRepository extends JpaRepository<Tesla, Long>{
 	Tesla findTeslaById(Long id);
 	List<Tesla> findAllByColor(String color);
 	List<Tesla> findAllByModel(String model);
-	List<Tesla> findAllByBattery(String battery);
+	List<Tesla> findAllByBatteryRange(String batteryRange);
 	List<Tesla> findAllByWheelSize(Integer wheelSize);
-	List<Tesla> findAllByInterior(String interior);
+	List<Tesla> findAllByInteriorColor(String interiorColor);
 	List<Tesla> findAllByAutopilot(Boolean autopilot);
 }

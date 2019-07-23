@@ -60,9 +60,9 @@ public class TeslaController {
 		return service.getTeslaByModel(model);
 	}
 	
-	@GetMapping("/tesla/battery/{battery}")
-	public List<Tesla> returnTeslaByBattery(@PathVariable String battery){
-		return service.getTeslaByBattery(battery);
+	@GetMapping("/tesla/battery/{batteryRange}")
+	public List<Tesla> returnTeslaByBatteryRange(@PathVariable String batteryRange){
+		return service.getTeslaByBatteryRange(batteryRange);
 	}
 	
 	@GetMapping("/tesla/wheel/{wheelSize}")
@@ -70,9 +70,9 @@ public class TeslaController {
 		return service.getTeslaByWheelSize(wheelSize);
 	}
 	
-	@GetMapping("/tesla/interior/{interior}")
-	public List<Tesla> returnTeslaByInterior(@PathVariable String interior){
-		return service.getTeslaByInterior(interior);
+	@GetMapping("/tesla/interior/{interiorColor}")
+	public List<Tesla> returnTeslaByInteriorColor(@PathVariable String interiorColor){
+		return service.getTeslaByInteriorColor(interiorColor);
 	}
 	
 	@GetMapping("/tesla/autopilot/{hasAutopilot}")

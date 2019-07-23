@@ -35,8 +35,8 @@ public class TeslaServiceImpl implements TeslaServiceInt{
 	}
 
 	@Override
-	public List<Tesla> getTeslaByBattery(String battery) {
-		return repo.findAllByBattery(battery);
+	public List<Tesla> getTeslaByBatteryRange(String batteryRange) {
+		return repo.findAllByBatteryRange(batteryRange);
 	}
 
 	@Override
@@ -45,8 +45,8 @@ public class TeslaServiceImpl implements TeslaServiceInt{
 	}
 
 	@Override
-	public List<Tesla> getTeslaByInterior(String interior) {
-		return repo.findAllByInterior(interior);
+	public List<Tesla> getTeslaByInteriorColor(String interiorColor) {
+		return repo.findAllByInteriorColor(interiorColor);
 	}
 
 	@Override
@@ -64,16 +64,16 @@ public class TeslaServiceImpl implements TeslaServiceInt{
 		Tesla teslaToReplace = repo.findTeslaById(id);
 		String color = updateTesla.getColor();
 		String model = updateTesla.getModel();
-		String battery = updateTesla.getBattery();
+		String battery = updateTesla.getBatteryRange();
 		Integer wheel = updateTesla.getWheelSize();
-		String interior = updateTesla.getInterior();
+		String interior = updateTesla.getInteriorColor();
 		Boolean autopilot = updateTesla.getAutopilot();
 		
 		if(color != null) teslaToReplace.setColor(color);
 		if(model != null) teslaToReplace.setModel(model);
-		if(battery != null) teslaToReplace.setBattery(battery);
+		if(battery != null) teslaToReplace.setBatteryRange(battery);
 		if(wheel != null) teslaToReplace.setWheelSize(wheel);
-		if(interior != null) teslaToReplace.setInterior(interior);
+		if(interior != null) teslaToReplace.setInteriorColor(interior);
 		if(autopilot != null) teslaToReplace.setAutopilot(autopilot);
 		
 		repo.save(teslaToReplace);
