@@ -9,7 +9,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name="Tesla")
 public class Tesla {
 
 	@Id

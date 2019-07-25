@@ -1,24 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Poppins&display=swap" rel="stylesheet">
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta charset="UTF-8">
 		<title>Tesla Inventory</title>
+		<style>
+			body{
+				font-family: 'Poppins', sans-serif;
+			}
+		</style>
 	</head>
-	<body>
+	<body class="grey lighten-4">
 		<div class="container">
-			<div>
+			<div class="center-align">
 				<h1>Tesla Inventory</h1>
-				<p>RESTful API with ability to make get, post, update, and delete requests on Tesla "Inventory".</p>
+				<p>RESTful API with ability to make get, post, put, and delete requests on Tesla "Inventory".</p>
 			</div>
-			<div>
-				<h2>Routes</h2>
-				
+				<div>
+					<h2>Routes</h2>
+					<hr>
+					<table class="responsive-table">
+						<tbody>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/teslas</td>
+								<td>Get all Teslas from inventory</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/<span class="blue-grey-text text-lighten-2">{id}</span></td>
+								<td>Get Tesla by id</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/color/<span class="blue-grey-text text-lighten-2">{color}</span></td>
+								<td>Get all Teslas by color</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/model/<span class="blue-grey-text text-lighten-2">{model}</span></td>
+								<td>Get all Teslas by model</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/battery/<span class="blue-grey-text text-lighten-2">{battery}</span></td>
+								<td>Get all Teslas by battery</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/wheel/<span class="blue-grey-text text-lighten-2">{wheelSize}</span></td>
+								<td>Get all Teslas by wheel size</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/interior/<span class="blue-grey-text text-lighten-2">{interiorColor}</span></td>
+								<td>Get all Teslas by interior color</td>
+							</tr>
+							<tr>
+								<td class="green-text text-accent-4">GET</td>
+								<td>/tesla/autopilot/<span class="blue-grey-text text-lighten-2">{hasAutopilot}</span></td>
+								<td>Get all Teslas by autopilot availability</td>
+							</tr>
+							<tr>
+								<td class="blue-text">POST</td>
+								<td>/tesla</td>
+								<td>Create a new Tesla</td>
+							</tr>
+							<tr>
+								<td class="orange-text text-accent-2">PUT</td>
+								<td>/tesla/{id}</td>
+								<td>Edit existing Tesla by id</td>
+							</tr>
+							<tr>
+								<td class="red-text">DELETE</td>
+								<td>/tesla/{id}</td>
+								<td>Delete Tesla by id</td>
+							</tr>
+							<tr>
+								<td class="red-text">DELETE</td>
+								<td>/teslas</td>
+								<td>Delete all Teslas</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<h2>Properties</h2>
+					<hr>
+					<table class="responsive-table">
+						<tbody>
+							<tr>
+								<td>Color</td>
+								<td>White | Black | Silver | Blue | Red</td>
+							</tr>
+							<tr>
+								<td>Model</td>
+								<td>S | 3 | X</td>
+							</tr>
+							<tr>
+								<td>Battery</td>
+								<td>Standard | Long | Performance</td>
+							</tr>
+							<tr>
+								<td>Wheel Size</td>
+								<td>18 | 19 | 20 | 21 | 22</td>
+							</tr>
+							<tr>
+								<td>Interior Color</td>
+								<td>Black | White | Cream</td>
+							</tr>
+							<tr>
+								<td>Autopilot</td>
+								<td>true | false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-			
-		</div>
-	
 	</body>
 </html>
